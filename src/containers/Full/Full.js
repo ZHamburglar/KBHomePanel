@@ -16,6 +16,7 @@ import Cards from '../../views/Components/Cards/';
 import Forms from '../../views/Components/Forms/';
 import Modals from '../../views/Components/Modals/';
 import SocialButtons from '../../views/Components/SocialButtons/';
+import Sports from '../../views/Components/Sports/';
 import Switches from '../../views/Components/Switches/';
 import Tables from '../../views/Components/Tables/';
 import Tabs from '../../views/Components/Tabs/';
@@ -48,6 +49,7 @@ class Full extends Component {
                 <Route path="/icons/simple-line-icons" name="Simple Line Icons" component={SimpleLineIcons}/>
                 <Route path="/widgets" name="Widgets" component={Widgets}/>
                 <Route path="/charts" name="Charts" component={Charts}/>
+                <Route path="/sports" name="Sports" component={Sports}/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </Container>

@@ -80,7 +80,7 @@ class Header extends Component {
             <Dropdown isOpen={this.state.dropdownOpen} toggle={this.toggle}>
               <DropdownToggle className="nav-link dropdown-toggle">
                 <img src={'img/avatars/5.jpg'} className="img-avatar" alt="admin@bootstrapmaster.com"/>
-                <span className="d-md-down-none">Christopher</span>
+                <span className="d-md-down-none">Kollin</span>
               </DropdownToggle>
               <DropdownMenu right className={this.state.dropdownOpen ? 'show' : ''}>
                 <DropdownItem header tag="div" className="text-center"><strong>Account</strong></DropdownItem>

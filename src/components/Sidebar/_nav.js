@@ -133,6 +133,11 @@ export default {
           icon: 'icon-star'
         }
       ]
+    },
+    {
+      name: 'Sports',
+      url: '/sports',
+      icon: 'icon-social-dribbble'
     }
   ]
 };

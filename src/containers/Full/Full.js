@@ -15,6 +15,7 @@ import Buttons from '../../views/Components/Buttons/';
 import Cards from '../../views/Components/Cards/';
 import Forms from '../../views/Components/Forms/';
 import Modals from '../../views/Components/Modals/';
+import News from '../../views/Components/News/'
 import SocialButtons from '../../views/Components/SocialButtons/';
 import Sports from '../../views/Components/Sports/';
 import Switches from '../../views/Components/Switches/';
@@ -50,6 +51,7 @@ class Full extends Component {
                 <Route path="/widgets" name="Widgets" component={Widgets}/>
                 <Route path="/charts" name="Charts" component={Charts}/>
                 <Route path="/sports" name="Sports" component={Sports}/>
+                <Route path="/news" name="News" component={News}/>
                 <Redirect from="/" to="/dashboard"/>
               </Switch>
             </Container>

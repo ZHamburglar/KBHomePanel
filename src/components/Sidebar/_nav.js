@@ -138,6 +138,11 @@ export default {
       name: 'Sports',
       url: '/sports',
       icon: 'icon-social-dribbble'
+    },
+    {
+      name: 'News',
+      url: '/news',
+      icon: 'icon-globe'
     }
   ]
 };

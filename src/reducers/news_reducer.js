@@ -1,5 +1,7 @@
 import {
-
+  BBC_LOADING,
+  BBC_LOADING_FAIL,
+  BBC_FOUND
 } from '../actions/types';
 
 const INITIAL_STATE = {
@@ -14,7 +16,7 @@ export default (state = INITIAL_STATE, action) => {
       return { ...state, bbc_loading: true};
     case BBC_FOUND:
       console.log('BBC News found');
-      return { ..state, bbc_loading: false, bbc_news: action.payload};
+      return { ...state, bbc_loading: false, bbc_news: action.payload};
     default:
       return state;
   }

@@ -1,4 +1,7 @@
 import React, {Component} from "react";
+import { connect } from 'react-redux';
+import { bbc_found, bbc_loading, bbc_loading_fail } from '../../../actions/types';
+
 import {
   Badge,
   Row,
@@ -248,4 +251,4 @@ class News extends Component {
   }
 }
 
-export default News;
+export default connect()(News);

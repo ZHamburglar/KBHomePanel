@@ -1,5 +1,6 @@
 import React, {Component} from "react";
 import { connect } from 'react-redux';
+import Img from 'react-image';
 import { bbcFetch } from '../../../actions';
 import { bbc_found, bbc_loading, bbc_loading_fail } from '../../../actions/types';
 
@@ -10,6 +11,7 @@ import {
   Card,
   CardHeader,
   CardBlock,
+  Collapse,
   Label,
   ListGroup,
   ListGroupItem,
@@ -23,6 +25,17 @@ import {
 
 
 class News extends Component {
+  constructor(props) {
+    super(props);
+    this.toggle = this.toggle.bind(this);
+    this.state = { collapse: true };
+  }
+
+  toggle() {
+    console.log("Collapsing")
+    this.setState({ collapse: !this.state.collapse });
+  }
+
   componentDidMount(){
     console.log('Hello ', this.props.bbc_loading)
     this.props.bbcFetch();
@@ -39,8 +52,9 @@ class News extends Component {
     const ListStories = ListOfStories.map((pats, index) => (
       <ListGroupItem key={pats.index} className="justify-content-between" href="www.google.com">
         <Media>
-          <Media left href="#">
-            <Media object data-src={pats.urlToImage} alt="Generic placeholder image" />
+
+          <Media left href={pats.url}>
+            <Img src={pats.urlToImage} style={{width: 280, height: 180, paddingRight: 10}} />
           </Media>
           <Media body>
             <Media heading>
@@ -84,11 +98,13 @@ class News extends Component {
           <Col>
             <Card>
               <CardHeader>
-                <i className="fa fa-align-justify"></i> BBC News
+                <i className="fa fa-align-justify" onClick={this.toggle}></i> BBC News
               </CardHeader>
-              <CardBlock className="card-body">
-                  {this.renderBBCStories()}
-              </CardBlock>
+              <Collapse isOpen={this.state.collapse}>
+                <CardBlock className="card-body">
+                    {this.renderBBCStories()}
+                </CardBlock>
+              </Collapse>
             </Card>
           </Col>
         </Row>

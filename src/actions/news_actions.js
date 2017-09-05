@@ -14,6 +14,13 @@ export const bbcFetch = () => {
       dispatch({ type: BBC_LOADING_FAIL });
     }, 5000)
     axios.get('https://newsapi.org/v1/articles?source=bbc-news&sortBy=top&apiKey=612a150f5d4b480d95b3a7d0d5befe1f')
-      .then(console.log("BBC Found"))
+      .then(news => bbcnewsfound(dispatch, news))
   }
+}
+
+const bbcnewsfound = (dispatch, news) => {
+  dispatch({
+    type: BBC_FOUND,
+    payload: news
+  })
 }
